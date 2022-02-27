@@ -7,26 +7,31 @@ namespace assignment {
 
   // Task 1
   int squared_diff(int left, int right) {
-
-    // Write your code here ...
-
-    return 0;
+    int diff = left - right;
+    return diff * diff;
   }
 
   // Task 2
   bool check_bit(int mask, int bit_pos) {
-
-    // Write your code here ...
-
-    return false;
+    if (mask < 0 || bit_pos < 0) {
+      return false;
+    }
+    mask = mask >> bit_pos;
+    if (mask % 2 == 0) {
+      return false;
+    }
+    return true;
   }
 
   // Task 3
   int max3(int left, int middle, int right) {
-
-    // Write your code here ...
-
-    return 0;
+    if (left > middle and left > right) {
+      return left;
+    }
+    else if (middle > left and middle > right) {
+      return middle;
+    }
+    return right;
   }
 
   // Task 4
