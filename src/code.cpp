@@ -36,23 +36,37 @@ namespace assignment {
 
   // Task 4
   void swap_args(int *left, int *right) {
-
-    // Write your code here ...
+    if (left != nullptr and right != nullptr) {
+      int a = *left;
+      int b = *right;
+      *left = b;
+      *right = a;
+    }
   }
 
   // Task 5
   int arr_sum(int *arr, int length) {
-
-    // Write your code here ...
-
+    if (length > 0 and arr != nullptr) {
+      int sum = 0;
+      for (int i = 0; i < length; i++) {
+        sum += *(arr + i);
+      }
+    return sum;
+    }
     return 0;
   }
 
   // Task 6
   int *find_max_elem(int *arr, int length) {
-
-    // Write your code here ...
-
+    if (arr != nullptr and length > 0) {
+      int* answer = arr;
+      for (int i = 0; i < length; i++) {
+        if (*answer < *(arr + i)) {
+            answer = (arr + i);
+          }
+      }
+    return answer;
+    }
     return nullptr;
   }
 
@@ -74,8 +88,20 @@ namespace assignment {
 
   // Task 9
   void print_kth_elements(int *arr, int length, int k, std::ostream &os) {
-
-    // Write your code here ...
+    if (arr == nullptr) {
+      os << "Invalid argument: arr\n";
+    }
+    else if (length <= 0) {
+      os << "Invalid argument: length\n";
+    }
+    else if (k <= 0) {
+      os << "Invalid argument: k\n";
+    }
+    else {
+      for (int i = 0; i < length; i += k) {
+        os << *(arr + i) << "\t";
+      }
+    }
   }
 
 }  // namespace assignment
