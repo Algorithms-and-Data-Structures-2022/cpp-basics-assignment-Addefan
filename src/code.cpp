@@ -72,17 +72,21 @@ namespace assignment {
 
   // Task 7
   int *allocate_arr(int length, int init_value) {
-
-    // Write your code here ...
-
+    if (length > 0) {
+      int* arr = new int[length]{};
+      std::fill(arr, arr + length, init_value);
+      return arr;
+    }
     return nullptr;
   }
 
   // Task 8
   int *clone_arr(int *arr_in, int length) {
-
-    // Write your code here ...
-
+    if (arr_in != nullptr and length > 0) {
+      int* new_arr = new int[length]{};
+      std::copy(arr_in, arr_in + length, new_arr);
+      return new_arr;
+    }
     return nullptr;
   }
 
